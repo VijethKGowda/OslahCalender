@@ -1,7 +1,5 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import Hour from './Hour'
-
 
 const Hours = ({ selectedDate, events, addEvent }) => {
   const hours = []
@@ -9,10 +7,10 @@ const Hours = ({ selectedDate, events, addEvent }) => {
     hours.push({
       time:
         selectedDate
-        .clone()
-        .hour(i)
-        .minute(0)
-        .second(0)
+          .clone()
+          .hour(i)
+          .minute(0)
+          .second(0)
     });
   }
 
@@ -22,7 +20,7 @@ const Hours = ({ selectedDate, events, addEvent }) => {
 
   return (
     <div className="hours">
-      { hours.map((hour, index) => <Hour key={index} hour={hour} addEvent={addEvent} />) }
+      { hours.map((hour, index) => <Hour key={index} hour={hour} addEvent={addEvent} />)}
     </div>
   )
 }

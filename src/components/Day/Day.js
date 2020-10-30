@@ -6,7 +6,7 @@ const Day = ({ selectedDate, events, addEvent }) => {
   const todaysEvents = events.filter(event => {
     return event.from.format('DDMMYY') === selectedDate.format('DDMMYY');
   })
- 
+
   return (
     <div className="dayDiv">
       <div className="DayDate">

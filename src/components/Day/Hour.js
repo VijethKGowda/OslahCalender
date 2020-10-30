@@ -13,7 +13,7 @@ const Hour = ({ hour, addEvent }) => {
         role="button"
         onClick={handleAddEvent}
       >
-        { hour.title ? <button>{hour.title}</button> : null }
+        {hour.title ? <button>{hour.title}</button> : null}
       </li>
     </ul>
   );

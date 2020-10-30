@@ -19,7 +19,7 @@ const App = () => {
 
   const addEvent = (event) => {
     let existingEventIndex = events.findIndex(existingEvent => existingEvent.from.format() === event.from.format());
-    
+
     if (existingEventIndex >= 0) {
       events[existingEventIndex] = event;
     } else {
@@ -40,7 +40,7 @@ const App = () => {
     setNewEventTitle('');
   }
 
-  const handleAddEvent = (time, title='') => {
+  const handleAddEvent = (time, title = '') => {
     setNewEventTime(time);
     setNewEventTitle(title);
     setIsAddEventModalOpen(true);
@@ -64,7 +64,6 @@ const App = () => {
             ? <Day selectedDate={selectedDate} addEvent={handleAddEvent} events={events} />
             : <Month showDate={showDate} selectedDate={selectedDate} events={events} />
         }
-        
         <AddEvent
           className={classNames({
             'block': isAddEventModalOpen,
@@ -76,10 +75,6 @@ const App = () => {
           addEvent={addEvent}
           deleteEvent={deleteEvent}
         />
-{/* 
-        <button className="addEvent" onClick={() => { setIsAddEventModalOpen(true) }}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-        </button> */}
       </div>
     </>
   )

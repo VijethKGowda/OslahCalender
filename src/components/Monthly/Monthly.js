@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames';
+import dayjs from 'dayjs';
 
 import './style.css'
-import dayjs from 'dayjs';
 
 const Monthly = ({ showDate, selectedDate, events }) => {
   const [dates, setDates] = useState([]);

@@ -36,7 +36,7 @@ const AddEvent = ({ className, hide, time, addEvent, deleteEvent, existingTitle 
         </button>
         <form onSubmit={handleAddEvent}>
           <div className="form">
-            <input className="event" id="event" type="text" placeholder="Add title" value={title} onChange={e => setTitle(e.target.value)} />
+            <input className="event" autocomplete="off" id="event" type="text" placeholder="Add title" value={title} onChange={e => setTitle(e.target.value)} />
             <table className="inputDiv">
               <tr>
                 <td>from:</td>

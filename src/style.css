@@ -1,23 +1,98 @@
 .main{
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.leftHeader{
+    display: flex;
+    flex-direction: row;
+}
+
+.leftHeader button{
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #fff;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.leftHeader button:hover {
+    color: #1c71ea;
+}
+.leftHeader button:focus {
+    outline: none;
+}
+
+.leftHeader div{
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #4a5568;
+}
+.leftHeader div:hover {
+    color: #1c71ea;
+}
+
+.rightHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightHeader button{
+    width: 6rem;
+    color: #f7fafc;
+    background-color: #1c71ea;
+    font-weight: 300;
+    font-size: 1.125rem;
+    border-radius: .25rem;
+    border: none;
+    padding: .35rem 1.25rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+
+.rightHeader button:focus{
+    outline: 0;
+}
+.rightHeader button:hover{
+    background-color: #005bdb;
 }
 
 .eventDiv {
-    display: flex;
-    position: absolute;
+    /* display: grid; */
+    place-items: center;
+    justify-content: center;
+    position: fixed;
     top: 0;
     bottom: 0;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100%;
     background: #0000006b;
 }
 
 .innerDiv {
-    padding: 1rem;
-    background-color: #e2e8f0;
-    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    max-width: 90%;
+    width: 30rem;
+    flex-direction: row;
 }
 
 .buttonClose {
@@ -31,20 +106,6 @@
     outline: 0;
 }
 
-.deleteButton{
-    float: right;
-    padding-bottom: 0.75rem;
-    padding-top: 0.05rem;
-    margin-right: 0.50rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-.deleteButton:focus{
-    outline: 0;
-}
-
-
 .form{
     width: 100%;
     background-color: #fff;
@@ -55,89 +116,86 @@
     padding-right: 0.75rem;
 }
 
-.title{
-    border-color: #feb2b2;
-    border-bottom-width: 2px;
-    border-top-width: 0px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-    font-size: 1.5rem;
+.event{
+    border-color: #ecebeb;
+    color: #718096;
+    border-width: 0 0 2px;
+    font-size: 1.25rem;
     width: 100%;
+    padding: 0.1rem 0.2rem;
 }
 
-.title:focus{
+.event::placeholder {
+    font-size: 1rem;
+    color: #959ba3;
+  }
+
+.event:focus{
     outline: 0;
+    border-color: #1c71ea;
 }
 
 .inputDiv{
-    display: flex;
-    flex-direction: column;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
-    justify-content: flex-end;
-}
-
-.inputDiv label{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
     font-weight: 600;
     color: #718096;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 }
 
-.inputDiv input{
-    /* border-color: #718096; */
-    border-radius: 0.25rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-}
-
-.saveButton{
+.event-button{
     display: flex;
     border: none;
     justify-content: flex-end;
     width: 100%;
 }
 
-.saveButton button{
+.save-button{
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-weight: 600;
     border: none;
     color: #fff;
-    border: none;
-    background-color: #2b6cb0;
+    background-color: #1c71ea;
     border-radius: 0.25rem;
     cursor: pointer;
 }
-
-.saveButton button:focus{
+.save-button:focus{
     outline: 0;
+}
+.save-button:hover{
+    background-color: #005bdb;
+}
+
+.delete-button{
+    float: right;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    border: none;
+    color: #757373;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+.delete-button:focus{
+    outline: 0;
+}
+.delete-button:hover{
+    color: #fd4646;
 }
 
 .block {
-    display: block;
+    display: flex;
 }
 
 .hidden {
     display: none!important;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
 }
 
-
-@media (min-width: 640px) {
-    .inputDiv {
-        flex-direction: column;
-    }
-}
-
-@media (min-width: 768px) {
-    .inputDiv {
-        flex-direction: row;
-    }
-}

@@ -41,39 +41,46 @@ const Monthly = ({ showDate, selectedDate, events }) => {
         {
           dates.map((item, index) => {
             return (
-              <div
-                key={index}
-                role="button"
-                onClick={() => {
-                  showDate(item.day);
-                }}
-                className={classNames('dateBox', {
-                  'disabled': !Boolean(item.day)
-                })}
-              >
-                <div className="dateNumber">
-                  {
-                    item.today ?
-                      <div className="today">
-                        {item.day?.date()}
-                      </div> : (item.day?.date())
-                  }
-                </div>
+              <>
                 {
-                  events.map((eve) => {
-                    return (
-                      <div className="eventBox" key={eve.from}>{
-                        eve.from?.date() == item.day?.date() &&
-                          eve.from?.month() == item.day?.month() &&
-                          eve.from?.year() == item.day?.year() ?
-                          <button className="eventTitle">
-                            {eve.title}
-                        </button> :null
-                      }</div>
-                    )
-                  })
+                  item.day ?
+                    <div
+                      key={index}
+                      role="button"
+                      onClick={() => {
+                        showDate(item.day);
+                      }}
+                      className={classNames('dateBox', {
+                        'disabled': !Boolean(item.day)
+                      })}
+                    >
+                      <div className="dateNumber">
+                        {
+                          item.today ?
+                            <div className="today">
+                              {item.day?.date()}
+                            </div> : (item.day?.date())
+                        }
+                      </div>
+                      {
+                        events.map((eve) => {
+                          return (
+                            <div className="eventBox" key={eve.from}>{
+                              eve.from?.date() == item.day?.date() &&
+                                eve.from?.month() == item.day?.month() &&
+                                eve.from?.year() == item.day?.year() ?
+                                <button className="eventTitle">
+                                  {eve.title}
+                                </button> : null
+                            }</div>
+                          )
+                        })
+                      }
+                    </div>
+                    :
+                    <div key={index} className={classNames('dateBox', { 'disabled': !Boolean(item.day) })}></div>
                 }
-              </div>
+              </>
             )
           })
         }

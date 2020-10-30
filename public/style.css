@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html {
     line-height: 1.15; 
     -webkit-text-size-adjust: 100%; 
-    font-family: monospace, monospace; /* 1 */
+    font-family: 'Roboto', sans-serif;
     font-size: 1em; /* 2 */
   }
   

@@ -22,9 +22,9 @@ const Header = ({ selectedDate, setSelectedDate, toggleViewType, viewType }) => 
         {
           viewType == "MONTH" ? <button onClick={gotoPrevMonth}>&lt;</button> : null
         }
-        <div role="button" onClick={showMonthView} className="cursor-pointer">
+        <button onClick={showMonthView} className="cursor-pointer">
           {selectedDate.format('MMM')} {selectedDate.format('YYYY')}
-        </div>
+        </button>
         {
           viewType == "MONTH" ? <button onClick={gotoNextMonth}>&gt;</button> : null
         }

@@ -36,15 +36,15 @@ const AddEvent = ({ className, hide, time, addEvent, deleteEvent, existingTitle 
         </button>
         <form onSubmit={handleAddEvent}>
           <div className="form">
-            <input className="event" autocomplete="off" id="event" type="text" placeholder="Add title" value={title} onChange={e => setTitle(e.target.value)} />
+            <input className="event" autocomplete="off" id="event" type="text" placeholder="Add event title" value={title} onChange={e => setTitle(e.target.value)} />
             <table className="inputDiv">
               <tr>
-                <td>from:</td>
-                <td>{time?.format('MMMM D, YYYY hh:mm A')}</td>
+                <td>Date: </td>
+                <td className="table-content">{time?.format('MMM D, YYYY')}</td>
               </tr>
               <tr>
-                <td>to:</td>
-                <td>{time?.hour(time.hour() + 1).format('MMMM D, YYYY hh:mm A')}</td>
+                <td>Time: </td>
+                <td className="table-content">{time?.format('h:mm A')} - {time?.hour(time.hour() + 1).format('h:mm A')}</td>
               </tr>
             </table>
             <div className="event-button">

@@ -30,31 +30,21 @@
   justify-content: start;
   align-items: center;
   border: 1px solid #e1e7f3;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
   margin-top: -1px;
   margin-right: -1px;
   height: 8rem;
   cursor: pointer;
   transition: transform 0.2s;
 }
+
+.dateBox:hover {
+  background: #eeeeee;
+}
 .scrollable {
   width: 100%;
   padding: 2px 4px;
   overflow-y: auto;
   overflow-x: hidden;
-}
-
-.dateBox:hover {
-  transform: scale(0.95);
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  border-top-width: 0;
-  background: #f7f7f7;
-  border-bottom-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
 }
 
 .dateNumber {
